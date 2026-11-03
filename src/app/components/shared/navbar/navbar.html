@@ -1,0 +1,19 @@
+<nav>
+    <a routerLink="/" 
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    
+    <a [routerLink]="['/hero']" 
+    [routerLinkActive]="'active'"
+    >Hero</a>
+
+    <a routerLink="/dragonball"
+     [routerLinkActive]="'active'"
+     [routerLinkActiveOptions]="{ exact: true }"
+    >Dragon Ball</a>
+
+    <a routerLink="/dragonball-super"
+     [routerLinkActive]="'active'"
+     [routerLinkActiveOptions]="{ exact: true }"
+    >Dragon Ball super</a>
+</nav>

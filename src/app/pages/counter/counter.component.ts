@@ -1,0 +1,32 @@
+import{ChangeDetectionStrategy, Component, signal} from '@angular/core'
+
+@Component({
+   templateUrl: './counter.component.html',
+   styleUrl: './counter.component.css',
+   changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class CounterPageComponent{
+    counter =10;
+    counterSignal= signal(10);
+    
+   
+    constructor(){
+       /* setInterval(()=>{
+            this.counterSignal.update(current => current + 1);
+            console.log('tick');
+        },3000);*/
+    }
+
+    increment(value: number){
+        this.counter+=value;
+        this.counterSignal.update(current => current + value);
+    }
+
+    resetCounter(){
+        this.counter=10;
+        this.counterSignal.set(0);
+    }
+
+
+}

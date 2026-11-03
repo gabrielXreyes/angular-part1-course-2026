@@ -1,0 +1,28 @@
+<div class="col-12 col-sm-6">
+        <h3>Agregar:{{name()}}  {{powerLevel()}}</h3>
+        <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Nombre" 
+        [value]="name()"
+        // cuando el valor del input cambie, se actualiza la señal 'name' con el valor del input
+        // (change)="name.set(txtName.value)"
+
+        // otra forma de hacerlo, usando la referencia local del input pero se actualiza en tiempo real, cada vez que el usuario escribe algo
+        (input)="name.set(txtName.value)"
+        
+        //referencias local
+        #txtName 
+        />
+        
+        <input 
+        type="number" 
+        class="form-control mt-2" 
+        placeholder="Poder"
+        [value]="powerLevel()"
+        (input)="powerLevel.set(txtPowerLevel.valueAsNumber)"
+        #txtPowerLevel
+        />
+
+        <button (click)="addCharacter()" class="mt-2 btn btn-primary">Agregar</button>
+    </div>
